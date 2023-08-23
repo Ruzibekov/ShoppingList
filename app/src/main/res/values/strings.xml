@@ -2,4 +2,6 @@
     <string name="app_name">Список покупок</string>
     <string name="lists">Списки</string>
     <string name="add_list">Добавить список</string>
+    <string name="create">Создать</string>
+    <string name="cancel">Отмена</string>
 </resources>

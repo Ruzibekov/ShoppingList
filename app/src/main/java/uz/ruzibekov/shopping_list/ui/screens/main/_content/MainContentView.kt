@@ -12,17 +12,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import uz.ruzibekov.shopping_list.ui.screens.main._component.MainItemView
 import uz.ruzibekov.shopping_list.ui.screens.main._component.MainTopBarView
+import uz.ruzibekov.shopping_list.ui.screens.main.listeners.MainListeners
 
 object MainContentView {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun Default() {
+    fun Default(listeners: MainListeners) {
         Scaffold(
-
             topBar = {
-
-                MainTopBarView.Default()
+                MainTopBarView.Default(listeners)
             }
         ) { paddingValues ->
 
@@ -39,10 +38,4 @@ object MainContentView {
             }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview() {
-    MainContentView.Default()
 }

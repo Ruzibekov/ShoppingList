@@ -25,7 +25,7 @@
         </activity>
 
         <activity
-            android:name=".ui.screens.shopping_list.create.CreateListActivity"
+            android:name=".ui.screens.shopping_list.create.CreateShoppingListActivity"
             android:exported="true"
             android:theme="@style/Theme.ShoppingList" />
 

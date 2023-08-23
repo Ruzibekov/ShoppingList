@@ -8,4 +8,5 @@
     <string name="add">Добавить</string>
     <string name="cancel">Отмена</string>
     <string name="back">Назад</string>
+    <string name="is_empty_list">Список пуст</string>
 </resources>

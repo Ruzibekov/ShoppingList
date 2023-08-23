@@ -20,7 +20,10 @@ class CreateListViewModel @Inject constructor(
     private val scope = CoroutineScope(Dispatchers.IO)
 
     fun createNewList() = scope.launch {
-        val entity = ShoppingListEntity(name = state.name.value)
-        shoppingListDao.createList(entity)
+        if (state.name.value.isNotEmpty()) {
+
+            val entity = ShoppingListEntity(name = state.name.value)
+            shoppingListDao.createList(entity)
+        }
     }
 }

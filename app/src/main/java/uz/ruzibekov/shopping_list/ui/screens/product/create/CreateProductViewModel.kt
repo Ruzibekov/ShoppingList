@@ -23,12 +23,15 @@ class CreateProductViewModel @Inject constructor(
 
         state.shoppingListId?.let { id ->
 
-            val entity = ProductEntity(
-                name = state.name.value,
-                shoppingListId = id
-            )
+            if (state.name.value.isNotEmpty()) {
 
-            dao.createProduct(entity)
+                val entity = ProductEntity(
+                    name = state.name.value,
+                    shoppingListId = id
+                )
+
+                dao.createProduct(entity)
+            }
         }
     }
 }

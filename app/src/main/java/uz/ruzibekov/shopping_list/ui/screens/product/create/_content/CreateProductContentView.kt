@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,6 +21,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import uz.ruzibekov.shopping_list.R
@@ -78,14 +80,17 @@ object CreateProductContentView {
             BasicTextField(
                 value = state.name.value,
                 onValueChange = {
-                    state.name.value = it
+                    if (it.length < 25)
+                        state.name.value = it
                 },
                 modifier = Modifier.fillMaxWidth(),
                 textStyle = TextStyle(
                     fontWeight = FontWeight.Medium,
-                    fontSize = 22.sp,
+                    fontSize = 20.sp,
                     color = AppColor.Black
-                )
+                ),
+                maxLines = 1,
+                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done)
             )
 
             Spacer(modifier = Modifier.height(11.dp))

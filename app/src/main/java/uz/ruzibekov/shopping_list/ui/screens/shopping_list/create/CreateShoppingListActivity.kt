@@ -9,7 +9,7 @@ import uz.ruzibekov.shopping_list.ui.screens.shopping_list.create.listeners.Crea
 
 
 @AndroidEntryPoint
-class CreateListActivity : BaseActivity(), CreateListListeners {
+class CreateShoppingListActivity : BaseActivity(), CreateListListeners {
 
     private val viewModel: CreateListViewModel by viewModels()
 

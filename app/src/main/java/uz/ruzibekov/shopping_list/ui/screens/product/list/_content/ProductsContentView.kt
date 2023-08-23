@@ -1,16 +1,15 @@
 package uz.ruzibekov.shopping_list.ui.screens.product.list._content
 
-import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import uz.ruzibekov.shopping_list.ui.screens.product.list._components.ProductItemView
+import uz.ruzibekov.shopping_list.ui.screens.product.list._components.ProductsListEmptyView
+import uz.ruzibekov.shopping_list.ui.screens.product.list._components.ProductsListView
 import uz.ruzibekov.shopping_list.ui.screens.product.list._components.ProductsTopBarView
 import uz.ruzibekov.shopping_list.ui.screens.product.list.listeners.ProductsListeners
 import uz.ruzibekov.shopping_list.ui.screens.product.list.state.ProductsState
@@ -30,15 +29,16 @@ object ProductsContentView {
             },
         ) { paddingValues ->
 
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues),
-                contentPadding = PaddingValues(top = 8.dp)
+            Box(
+                modifier = Modifier.fillMaxSize().padding(paddingValues),
+                contentAlignment = Alignment.Center
             ) {
 
-                items(state.products) { data ->
-                    ProductItemView.Default(data)
+                when {
+
+                    state.products.isNotEmpty() -> ProductsListView.Default(state)
+
+                    else -> ProductsListEmptyView.Default()
                 }
             }
         }

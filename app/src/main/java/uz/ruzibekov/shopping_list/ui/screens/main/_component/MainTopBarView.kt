@@ -31,7 +31,7 @@ object MainTopBarView {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(140.dp)
+                .height(100.dp)
                 .padding(start = 16.dp, end = 16.dp, bottom = 11.dp),
             contentAlignment = Alignment.BottomCenter
         ) {

@@ -17,16 +17,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import uz.ruzibekov.shopping_list.R
+import uz.ruzibekov.shopping_list.ui.screens.list.create.state.CreateListState
 import uz.ruzibekov.shopping_list.ui.theme.AppColor
 
 object CreateListContentView {
 
     @Composable
-    fun Default() {
+    fun Default(state: CreateListState) {
 
         Column(
             modifier = Modifier
@@ -68,8 +68,10 @@ object CreateListContentView {
             Spacer(modifier = Modifier.height(11.dp))
 
             BasicTextField(
-                value = "",
-                onValueChange = {},
+                value = state.name.value,
+                onValueChange = {
+                    state.name.value = it
+                },
                 modifier = Modifier.fillMaxWidth(),
                 textStyle = TextStyle(
                     fontWeight = FontWeight.Medium,
@@ -83,10 +85,4 @@ object CreateListContentView {
             Divider()
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview() {
-    CreateListContentView.Default()
 }

@@ -17,16 +17,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import uz.ruzibekov.shopping_list.R
+import uz.ruzibekov.shopping_list.data.model.ShoppingListEntity
 import uz.ruzibekov.shopping_list.ui.theme.AppColor
 
 object MainItemView {
 
     @Composable
-    fun Default() {
+    fun Default(data: ShoppingListEntity) {
 
         Card(
             shape = RoundedCornerShape(10.dp),
@@ -58,7 +58,7 @@ object MainItemView {
                 Spacer(modifier = Modifier.width(12.dp))
 
                 Text(
-                    text = "All I need",
+                    text = data.name,
                     fontSize = 17.sp,
                     color = AppColor.Black,
                     fontWeight = FontWeight.Medium
@@ -66,11 +66,4 @@ object MainItemView {
             }
         }
     }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview() {
-    MainItemView.Default()
 }

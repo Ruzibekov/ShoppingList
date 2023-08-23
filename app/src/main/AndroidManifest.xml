@@ -25,17 +25,17 @@
         </activity>
 
         <activity
-            android:name=".ui.screens.list.create.CreateListActivity"
+            android:name=".ui.screens.shopping_list.create.CreateListActivity"
             android:exported="true"
             android:theme="@style/Theme.ShoppingList" />
 
         <activity
-            android:name=".ui.screens.list.details.ListDetailsActivity"
+            android:name=".ui.screens.product.list.ProductsActivity"
             android:exported="true"
             android:theme="@style/Theme.ShoppingList" />
 
         <activity
-            android:name=".ui.screens.product.CreateProductActivity"
+            android:name=".ui.screens.product.create.CreateProductActivity"
             android:exported="true"
             android:theme="@style/Theme.ShoppingList" />
 

@@ -1,11 +1,11 @@
-package uz.ruzibekov.shopping_list.ui.screens.list.create
+package uz.ruzibekov.shopping_list.ui.screens.shopping_list.create
 
 import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import dagger.hilt.android.AndroidEntryPoint
 import uz.ruzibekov.shopping_list.ui.screens.base.BaseActivity
-import uz.ruzibekov.shopping_list.ui.screens.list.create._content.CreateListContentView
-import uz.ruzibekov.shopping_list.ui.screens.list.create.listeners.CreateListListeners
+import uz.ruzibekov.shopping_list.ui.screens.shopping_list.create._content.CreateListContentView
+import uz.ruzibekov.shopping_list.ui.screens.shopping_list.create.listeners.CreateListListeners
 
 
 @AndroidEntryPoint

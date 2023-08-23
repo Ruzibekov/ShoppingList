@@ -1,4 +1,4 @@
-package uz.ruzibekov.shopping_list.ui.screens.product._content
+package uz.ruzibekov.shopping_list.ui.screens.product.create._content
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -23,8 +23,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import uz.ruzibekov.shopping_list.R
-import uz.ruzibekov.shopping_list.ui.screens.product.listeners.CreateProductListeners
-import uz.ruzibekov.shopping_list.ui.screens.product.state.CreateProductState
+import uz.ruzibekov.shopping_list.ui.screens.product.create.listeners.CreateProductListeners
+import uz.ruzibekov.shopping_list.ui.screens.product.create.state.CreateProductState
 import uz.ruzibekov.shopping_list.ui.theme.AppColor
 
 object CreateProductContentView {
@@ -53,7 +53,7 @@ object CreateProductContentView {
                 )
 
                 Text(
-                    text = stringResource(id = R.string.create),
+                    text = stringResource(id = R.string.add),
                     modifier = Modifier
                         .clip(RoundedCornerShape(10.dp))
                         .clickable { listeners.createProduct() }
@@ -69,7 +69,7 @@ object CreateProductContentView {
             Text(
                 text = stringResource(id = R.string.add_product),
                 fontWeight = FontWeight.Bold,
-                fontSize = 34.sp,
+                fontSize = 26.sp,
                 color = AppColor.Black
             )
 

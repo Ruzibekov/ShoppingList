@@ -1,4 +1,4 @@
-package uz.ruzibekov.shopping_list.ui.screens.list.create._content
+package uz.ruzibekov.shopping_list.ui.screens.shopping_list.create._content
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -23,8 +23,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import uz.ruzibekov.shopping_list.R
-import uz.ruzibekov.shopping_list.ui.screens.list.create.listeners.CreateListListeners
-import uz.ruzibekov.shopping_list.ui.screens.list.create.state.CreateListState
+import uz.ruzibekov.shopping_list.ui.screens.shopping_list.create.listeners.CreateListListeners
+import uz.ruzibekov.shopping_list.ui.screens.shopping_list.create.state.CreateListState
 import uz.ruzibekov.shopping_list.ui.theme.AppColor
 
 object CreateListContentView {
@@ -67,9 +67,9 @@ object CreateListContentView {
             Spacer(modifier = Modifier.height(11.dp))
 
             Text(
-                text = stringResource(id = R.string.add_list),
+                text = stringResource(id = R.string.new_shopping_list),
                 fontWeight = FontWeight.Bold,
-                fontSize = 34.sp,
+                fontSize = 26.sp,
                 color = AppColor.Black
             )
 

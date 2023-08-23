@@ -1,4 +1,4 @@
-package uz.ruzibekov.shopping_list.ui.screens.list.details._components
+package uz.ruzibekov.shopping_list.ui.screens.product.list._components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -15,12 +15,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import uz.ruzibekov.shopping_list.data.model.ProductEntity
 import uz.ruzibekov.shopping_list.ui.theme.AppColor
 
-object ListDetailsItemView {
+object ProductItemView {
 
     @Composable
-    fun Default() {
+    fun Default(entity: ProductEntity) {
 
         Card(
             modifier = Modifier
@@ -39,7 +40,7 @@ object ListDetailsItemView {
             ) {
 
                 Text(
-                    text = "Product name",
+                    text = entity.name,
                     fontWeight = FontWeight.Medium,
                     fontSize = 18.sp,
                     color = AppColor.Black

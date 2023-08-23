@@ -1,4 +1,4 @@
-package uz.ruzibekov.shopping_list.ui.screens.list.create
+package uz.ruzibekov.shopping_list.ui.screens.shopping_list.create
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -7,7 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import uz.ruzibekov.shopping_list.data.dao.ShoppingListDao
 import uz.ruzibekov.shopping_list.data.model.ShoppingListEntity
-import uz.ruzibekov.shopping_list.ui.screens.list.create.state.CreateListState
+import uz.ruzibekov.shopping_list.ui.screens.shopping_list.create.state.CreateListState
 import javax.inject.Inject
 
 @HiltViewModel

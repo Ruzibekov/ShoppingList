@@ -1,4 +1,4 @@
-package uz.ruzibekov.shopping_list.ui.screens.product.state
+package uz.ruzibekov.shopping_list.ui.screens.product.create.state
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf

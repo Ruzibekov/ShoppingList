@@ -77,4 +77,7 @@ dependencies {
     // room
     implementation("androidx.room:room-ktx:2.5.2")
     kapt("androidx.room:room-compiler:2.5.2")
+
+    // gson
+    implementation("com.google.code.gson:gson:2.10.1")
 }

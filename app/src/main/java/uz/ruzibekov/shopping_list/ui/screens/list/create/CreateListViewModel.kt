@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CreateListViewModel @Inject constructor(
-    private val dao: ShoppingListDao
+    private val shoppingListDao: ShoppingListDao
 ) : ViewModel() {
 
     val state = CreateListState()
@@ -20,11 +20,7 @@ class CreateListViewModel @Inject constructor(
     private val scope = CoroutineScope(Dispatchers.IO)
 
     fun createNewList() = scope.launch {
-        dao.createList(
-            ShoppingListEntity(
-
-                name = state.name.value
-            )
-        )
+        val entity = ShoppingListEntity(name = state.name.value)
+        shoppingListDao.createList(entity)
     }
 }

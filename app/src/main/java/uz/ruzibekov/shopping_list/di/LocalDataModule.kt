@@ -7,6 +7,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import uz.ruzibekov.shopping_list.data.dao.ProductDao
 import uz.ruzibekov.shopping_list.data.dao.ShoppingListDao
 import uz.ruzibekov.shopping_list.data.database.AppDatabase
 
@@ -20,5 +21,8 @@ object LocalDataModule {
 
     @Provides
     fun provideShoppingListDao(room: AppDatabase): ShoppingListDao = room.shoppingListDao()
+
+    @Provides
+    fun provideProductDao(room: AppDatabase): ProductDao = room.productDao()
 
 }

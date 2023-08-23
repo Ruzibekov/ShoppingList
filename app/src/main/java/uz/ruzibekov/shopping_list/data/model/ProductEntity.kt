@@ -4,8 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "shopping-lists")
-data class ShoppingListEntity(
+@Entity(tableName = "products")
+data class ProductEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo("list-name") val name: String
+    @ColumnInfo("name") val name: String,
+    @ColumnInfo("shopping_list_id") val shoppingListId: Long
 )

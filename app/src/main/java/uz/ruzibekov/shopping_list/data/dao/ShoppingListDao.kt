@@ -9,7 +9,7 @@ import uz.ruzibekov.shopping_list.data.model.ShoppingListEntity
 interface ShoppingListDao {
 
     @Insert
-    suspend fun createList(data: ShoppingListEntity)
+    suspend fun createList(data: ShoppingListEntity): Long
 
     @Query("SELECT * FROM `shopping-lists`")
     suspend fun getAllShoppingList(): List<ShoppingListEntity>

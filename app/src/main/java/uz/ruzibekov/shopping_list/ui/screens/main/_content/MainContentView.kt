@@ -37,7 +37,9 @@ object MainContentView {
             ) {
 
                 items(state.shoppingLists){data ->
-                    MainItemView.Default(data)
+                    MainItemView.Default(data){
+                        listeners.openListDetailsScreen(data)
+                    }
                 }
             }
         }

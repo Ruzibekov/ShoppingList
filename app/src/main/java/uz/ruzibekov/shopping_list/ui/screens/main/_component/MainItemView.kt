@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,13 +26,15 @@ import uz.ruzibekov.shopping_list.ui.theme.AppColor
 
 object MainItemView {
 
+    @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun Default(data: ShoppingListEntity) {
+    fun Default(data: ShoppingListEntity, onClick: (ShoppingListEntity) -> Unit) {
 
         Card(
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier.padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
-            colors = CardDefaults.cardColors(containerColor = AppColor.Light)
+            colors = CardDefaults.cardColors(containerColor = AppColor.Light),
+            onClick = { onClick(data) }
         ) {
 
             Row(

@@ -8,12 +8,13 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import uz.ruzibekov.shopping_list.ui.screens.product.list.listeners.ProductsListeners
 import uz.ruzibekov.shopping_list.ui.screens.product.list.state.ProductsState
 
 object ProductsListView {
 
     @Composable
-    fun Default(state: ProductsState) {
+    fun Default(state: ProductsState, listeners: ProductsListeners) {
 
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
@@ -21,7 +22,9 @@ object ProductsListView {
         ) {
 
             items(state.products) { data ->
-                ProductItemView.Default(data)
+                ProductItemView.Default(data){
+                    listeners.removeProduct(data.id)
+                }
             }
         }
     }

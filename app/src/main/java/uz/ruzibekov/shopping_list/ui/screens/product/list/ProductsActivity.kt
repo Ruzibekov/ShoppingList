@@ -46,4 +46,8 @@ class ProductsActivity : BaseActivity(), ProductsListeners {
         intent.putExtra(ExtraConstants.EXTRA_SHOPPING_LIST, viewModel.state.selectedList?.id)
         startActivity(intent)
     }
+
+    override fun removeProduct(id: Long) {
+        viewModel.removeProductById(id)
+    }
 }

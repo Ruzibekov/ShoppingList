@@ -10,18 +10,26 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import uz.ruzibekov.shopping_list.data.model.ProductEntity
 import uz.ruzibekov.shopping_list.ui.theme.AppColor
 
 object ProductItemView {
 
     @Composable
-    fun Default(entity: ProductEntity) {
+    fun Default(entity: ProductEntity, onDone: () -> Unit) {
 
         Card(
             modifier = Modifier
@@ -46,7 +54,15 @@ object ProductItemView {
                     color = AppColor.Black
                 )
 
-                Checkbox(checked = true, onCheckedChange = {})
+                var checked by remember { mutableStateOf(false) }
+
+                Checkbox(
+                    checked = checked,
+                    onCheckedChange = {
+                        checked = true
+                        onDone()
+                    }
+                )
             }
         }
     }

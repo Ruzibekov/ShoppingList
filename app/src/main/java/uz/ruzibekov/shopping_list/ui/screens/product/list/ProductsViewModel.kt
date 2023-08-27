@@ -28,4 +28,9 @@ class ProductsViewModel @Inject constructor(
             state.products.addAll(products)
         }
     }
+
+    fun removeProductById(id: Long) = scope.launch {
+        dao.removeProductById(id)
+        state.products.removeIf { it.id == id }
+    }
 }

@@ -6,4 +6,6 @@ interface ProductsListeners {
 
     fun openCreateProductScreen()
 
+    fun removeProduct(id: Long)
+
 }

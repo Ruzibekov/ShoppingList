@@ -49,6 +49,10 @@ object CreateListContentView {
 
                 Text(
                     text = stringResource(id = R.string.cancel),
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(10.dp))
+                        .clickable { listeners.onBackStack() }
+                        .padding(5.dp),
                     fontSize = 17.sp,
                     color = AppColor.Blue,
                     fontWeight = FontWeight.Normal

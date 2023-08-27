@@ -20,12 +20,16 @@ class CreateShoppingListActivity : BaseActivity(), CreateListListeners {
         )
     }
 
-    override fun initialize() {
-
-    }
+    override fun initialize() {}
 
     override fun createNewList() {
-        viewModel.createNewList()
+        if(viewModel.state.name.value.isNotEmpty()) {
+            viewModel.createNewList()
+            finish()
+        }
+    }
+
+    override fun onBackStack() {
         finish()
     }
 }

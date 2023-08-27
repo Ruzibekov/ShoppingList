@@ -29,7 +29,13 @@ class CreateProductActivity : BaseActivity(), CreateProductListeners {
     }
 
     override fun createProduct() {
-        viewModel.createProduct()
+        if(viewModel.state.name.value.isNotEmpty()) {
+            viewModel.createProduct()
+            finish()
+        }
+    }
+
+    override fun onBackStack() {
         finish()
     }
 }

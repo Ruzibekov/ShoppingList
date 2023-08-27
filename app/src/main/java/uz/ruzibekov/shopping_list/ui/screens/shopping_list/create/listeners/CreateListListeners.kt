@@ -4,4 +4,6 @@ interface CreateListListeners {
 
     fun createNewList()
 
+    fun onBackStack()
+
 }

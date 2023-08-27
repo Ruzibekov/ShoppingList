@@ -9,8 +9,11 @@ import uz.ruzibekov.shopping_list.data.model.ProductEntity
 interface ProductDao {
 
     @Insert
-    fun createProduct(entity: ProductEntity)
+    suspend fun createProduct(entity: ProductEntity)
 
     @Query("SELECT * FROM products WHERE shopping_list_id =:id")
-    fun getProductsByListId(id: Long): List<ProductEntity>
+    suspend fun getProductsByListId(id: Long): List<ProductEntity>
+
+    @Query("DELETE FROM products WHERE shopping_list_id =:id")
+    suspend fun removeProductById(id: Long)
 }

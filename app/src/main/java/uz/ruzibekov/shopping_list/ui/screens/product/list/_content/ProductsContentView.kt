@@ -35,8 +35,7 @@ object ProductsContentView {
             ) {
 
                 when {
-
-                    state.products.isNotEmpty() -> ProductsListView.Default(state)
+                    state.products.isNotEmpty() -> ProductsListView.Default(state, listeners)
 
                     else -> ProductsListEmptyView.Default()
                 }
